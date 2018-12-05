@@ -759,7 +759,7 @@ class Popover extends React.Component {
       ]
     };
     if (this.props.showBackground)
-      backgroundStyle.backgroundColor = 'rgba(0,0,0,0.5)'
+      backgroundStyle.backgroundColor = this.props.backgroundColor
 
     let containerStyle = {
       ...styles.container,
@@ -791,7 +791,7 @@ class Popover extends React.Component {
           </TouchableWithoutFeedback>
 
           <View style={{top: 0, left: 0}}>
-            
+
             <Animated.View style={popoverViewStyle} onLayout={evt => this.measureContent(evt.nativeEvent.layout)}>
               {this.props.children}
             </Animated.View>
@@ -870,6 +870,7 @@ var styles = {
 Popover.defaultDisplayArea = {};
 Popover.PLACEMENT_OPTIONS = PLACEMENT_OPTIONS;
 Popover.defaultProps = {
+  backgroundColor: 'rgba(0,0,0,0.5)',
   isVisible: false,
   arrowStyle: {},
   popoverStyle: {},
@@ -884,6 +885,7 @@ Popover.defaultProps = {
 }
 
 Popover.propTypes = {
+  backgroundColor: PropTypes.string,
   isVisible: PropTypes.bool,
   displayArea: PropTypes.objectOf(PropTypes.number),
   placement: PropTypes.oneOf([PLACEMENT_OPTIONS.LEFT, PLACEMENT_OPTIONS.RIGHT, PLACEMENT_OPTIONS.TOP, PLACEMENT_OPTIONS.BOTTOM, PLACEMENT_OPTIONS.AUTO]),
