@@ -758,8 +758,8 @@ class Popover extends React.Component {
         {translateX: backgroundShift}
       ]
     };
-    if (this.props.showBackground)
-      backgroundStyle.backgroundColor = this.props.backgroundColor
+
+    backgroundStyle.backgroundColor = this.props.backgroundColor
 
     let containerStyle = {
       ...styles.container,
