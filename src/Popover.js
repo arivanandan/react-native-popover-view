@@ -713,7 +713,7 @@ class Popover extends React.Component {
 
   render() {
     var { popoverOrigin, placement, forcedHeight, animatedValues, anchorPoint, forcedContentSize } = this.state;
-    const { popoverStyle, arrowStyle } = this.props;
+    const { popoverStyle, arrowStyle, showBackground } = this.props;
     const { arrowWidth, arrowHeight } = this.getCalculatedArrowDims();
 
     let arrowScale = animatedValues.scale.interpolate({
