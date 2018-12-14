@@ -759,7 +759,7 @@ class Popover extends React.Component {
       ]
     };
 
-    backgroundStyle.backgroundColor = this.props.backgroundColor
+    backgroundStyle.backgroundColor = showBackground ? this.props.backgroundColor : '#000000';
 
     let containerStyle = {
       ...styles.container,
